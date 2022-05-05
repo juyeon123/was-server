@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/was-server:$BUILD_ID', '.' ]
+- name: 'gcr.io/cloud-builders/kubectl'
+  env:
+    - 'CLOUDSDK_CORE_PROJECT=juyeon-pjt-347108'
+    - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast3-a'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=private-cluster-was'
+  args:
+    - set
+    - image
+    - deployment
+    - rolling-deploy
+    - 'was-server=gcr.io/$PROJECT_ID/was-server:$BUILD_ID'
+images:
+ - 'gcr.io/$PROJECT_ID/was-server:$BUILD_ID'

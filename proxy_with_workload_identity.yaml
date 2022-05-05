@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rolling-deploy
+spec:
+  selector:
+    matchLabels:
+      app: rolling-deploy
+  template:
+    metadata:
+      labels:
+        app: rolling-deploy
+    spec:
+      serviceAccountName: was-ksa
+      containers:
+      - name: was-server
+        image: gcr.io/juyeon-pjt-347108/was-server:app-0.5
+        env:
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: private-mysql
+              key: username
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: private-mysql
+              key: password
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: private-mysql
+              key: database
+      - name: cloud-sql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:latest
+        command:
+          - "/cloud_sql_proxy"
+          - "-log_debug_stdout"
+          - "-instances=juyeon-pjt-347108:asia-northeast3:private-mysql=tcp:3306"
+        securityContext:
+          runAsNonRoot: true
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu:    "1"

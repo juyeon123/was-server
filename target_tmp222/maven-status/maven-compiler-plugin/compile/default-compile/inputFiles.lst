@@ -1,0 +1,8 @@
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/core/main/service/MainGcpService.java
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/BespinGkeApplication.java
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/core/sub/controller/SubController.java
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/base/config/DatabaseConfig.java
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/core/main/service/MainGcpServiceImpl.java
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/core/main/dao/MainGcpDAO.java
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/core/main/controller/MainGcpController.java
+/home/juyeon_gcp3/Bespin-pjt/bespin-gke/src/main/java/com/bg/gke/base/abstdao/MainDAO.java
