@@ -13,7 +13,7 @@ steps:
     - rolling-deploy
     - 'was-server=gcr.io/$PROJECT_ID/was-server:$BUILD_ID'
 options:
-  pool:
+  workerPool:
     'projects/$PROJECT_ID/locations/asia-northeast3/workerPools/cloudbuild-private-pool'
 images:
  - 'gcr.io/$PROJECT_ID/was-server:$BUILD_ID'
