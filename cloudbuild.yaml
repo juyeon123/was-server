@@ -14,6 +14,6 @@ steps:
     - 'was-server=gcr.io/$PROJECT_ID/was-server:$BUILD_ID'
 options:
   workerPool:
-    'projects/501319115033/locations/asia-northeast3-a/workerPools/cloudbuild-private-pool'
+    'projects/$GOOGLE_CLOUD_PROJECT/locations/asia-northeast3/workerPools/cloudbuild-private-pool'
 images:
  - 'gcr.io/$PROJECT_ID/was-server:$BUILD_ID'
