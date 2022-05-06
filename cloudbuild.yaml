@@ -4,7 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   env:
     - 'CLOUDSDK_CORE_PROJECT=juyeon-pjt-347108'
-    - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast3'
+    - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast3-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=private-cluster-was'
   args:
     - set
